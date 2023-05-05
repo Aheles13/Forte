@@ -7,10 +7,30 @@ using namespace std;
 void printPianoKeys()
 {
     cout << "Press the following keys to play the notes:\n";
-    cout << "[Z] [X] [C] [V] [B] [N] [M]\n";
-    cout << " C#  D#     F#  G#  A#\n";
-    cout << "[Z] [X] [C] [V] [B] [N] [M]\n";
-    cout << "  C   D   E   F   G   A   B\n";
+    cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
+    cout << " |   ||   ||   ||   ||   ||   ||   | \n";
+    cout << " |   ||   ||   ||   ||   ||   ||   | \n";
+    cout << " |___||___||___||___||___||___||___|\n";
+    cout << " [Z]   [X]  [C]  [V]  [B]  [N]  [M] \n";
+   
+    cout << "Press [Esc] to exit\n";
+}
+
+// Функция для вывода вдавленной клавиши
+void printPressedKey(char key)
+{
+    cout << "  ___________\n";
+    cout << " |########## |\n";
+    cout << " |#####" << key << "     |\n";
+    cout << " |___________|\n";
+}
+
+// Функция для задержки и очистки экрана после отжатия клавиши
+void clearPressedKey()
+{
+    cout << "\r"; // Возврат каретки в начало строки
+    cout << "               "; // Очистка строки
+    cout << "\r"; // Возврат каретки в начало строки
 }
 
 int main()
@@ -19,61 +39,72 @@ int main()
 
     while (true)
     {
+        if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+        {
+            break; // Если нажата клавиша Esc, то выходим из цикла
+        }
+
         if (GetAsyncKeyState('Z') & 0x8000)
         {
-            cout << "\b[C#]";
+            printPressedKey('Z');
             Beep(277, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+           
         }
         if (GetAsyncKeyState('X') & 0x8000)
         {
-            cout << "\b[D#]";
+            printPressedKey('X');
             Beep(311, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+            
         }
         if (GetAsyncKeyState('C') & 0x8000)
         {
-            cout << "\b[E ]";
+            printPressedKey('C');
             Beep(330, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+           
         }
         if (GetAsyncKeyState('V') & 0x8000)
         {
-            cout << "\b[F#]";
+            printPressedKey('V');
             Beep(370, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+           
         }
         if (GetAsyncKeyState('B') & 0x8000)
         {
-            cout << "\b[G#]";
+            printPressedKey('B');
             Beep(415, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+           
         }
         if (GetAsyncKeyState('N') & 0x8000)
         {
-            cout << "\b[A#]";
+            printPressedKey('N');
             Beep(466, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+            
         }
         if (GetAsyncKeyState('M') & 0x8000)
         {
-            cout << "\b[B ]";
+            printPressedKey('M');
             Beep(494, 250);
+            clearPressedKey();
             Sleep(50);
-            cout << "\b\b\b   ";
+            
         }
-        Sleep(10);
+        
     }
+
     return 0;
 }
 
 
 
-              
-            
