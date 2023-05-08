@@ -1,11 +1,11 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cstdlib>
 #include <Windows.h>
 
 using namespace std;
 
 
-// Функция для вывода клавиш фортепиано
+// РР·РѕР±СЂР°Р¶РµРЅРёРµ РєР»Р°РІРёС€.
 void printPianoKeys()
 {
     cout << "Press the following keys to play the notes:\n";
@@ -13,157 +13,163 @@ void printPianoKeys()
     cout << " |   ||   ||   ||   ||   ||   ||   | \n";
     cout << " |   ||   ||   ||   ||   ||   ||   | \n";
     cout << " |___||___||___||___||___||___||___|\n";
-  
+
     cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
-   
+
     cout << "Press [Esc] to exit\n";
-      
+    cout << "Press [Delete] to clear\n";
+    cout << "Press [Space] to pause\n";
+
 }
 
 
-// Функция для вывода вдавленной клавиши
+
 void printPressedKey(char key)
 {
-   /* cout << "  ___________ \n";
-    cout << " |########## |\n";
-    cout << " |########## | " << key << "\n";
-    cout << " |########## |\n";
-    cout << " |___________|\n";*/
     
     cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
     cout << " |   ||   ||   ||   ||   ||   ||   | \n";
     cout << " |   ||   ||   ||   ||   ||   ||   | \n";
     cout << " |___||___||___||___||___||___||___|\n";
 
-    //cout << "[Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
-    
-   
+    cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
+
+
 }
 
-// Функция для задержки и очистки экрана после отжатия клавиши
+
 void clearPressedKey()
 {
-    cout << "\r"; // Возврат каретки в начало строки
-    cout << "                 "; // Очистка строки
-    cout << "\r"; // Возврат каретки в начало строки
+    cout << "\r"; 
+    cout << "                 "; 
+    cout << "\r"; 
     //system("cls");
 }
 
 int main()
 {
-    
-    
 
-    printPianoKeys(); // Выводим клавиши фортепиано
+
+
+    printPianoKeys(); // Р’С‹Р·РѕРІ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РєР»РІРёС€.
 
     while (true)
     {
         if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
         {
-            break; // Если нажата клавиша Esc, то выходим из цикла
+            break; // Р’С‹С…РѕРґ.
         }
-        
+        if (GetAsyncKeyState(VK_DELETE) & 0x8000)
+        {
+            system("cls"); // РћС‡РёСЃС‚РєР° РєРѕРЅСЃРѕР»Рё.
+        }
+        if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+        {
+            system("pause"); // РџР°СѓР·Р°.
+        }
+
         if (GetAsyncKeyState('Z') & 0x8000)
         {
-           // printPressedKey('Z');
+            printPressedKey('Z');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |###||   ||   ||   ||   ||   ||   | \n";
             cout << " |###||   ||   ||   ||   ||   ||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
-            cout << "[Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
+            cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(277, 250);
-            clearPressedKey();
-            Sleep(50);
-            //system("pause");
-            
+            //Sleep(50); 
         }
-          
+
         ;
         if (GetAsyncKeyState('X') & 0x8000)
         {
-            
-           // printPressedKey('X');
+
+            // printPressedKey('X');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||###||   ||   ||   ||   ||   | \n";
             cout << " |   ||###||   ||   ||   ||   ||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(311, 250);
-            clearPressedKey();
-            Sleep(50);
+            //Sleep(50);
             
         }
         if (GetAsyncKeyState('C') & 0x8000)
         {
             //printPressedKey('C');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||   ||###||   ||   ||   ||   | \n";
             cout << " |   ||   ||###||   ||   ||   ||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(330, 250);
-            clearPressedKey();
-            Sleep(50);
-           
+            //Sleep(50);
+
         }
         if (GetAsyncKeyState('V') & 0x8000)
         {
             //printPressedKey('V');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||   ||   ||###||   ||   ||   | \n";
             cout << " |   ||   ||   ||###||   ||   ||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(370, 250);
-            clearPressedKey();
-            Sleep(50);
-           
+            //Sleep(50);
+
         }
         if (GetAsyncKeyState('B') & 0x8000)
         {
             //printPressedKey('B');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||   ||   ||   ||###||   ||   | \n";
             cout << " |   ||   ||   ||   ||###||   ||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(415, 250);
-            clearPressedKey();
-            Sleep(50);
-           
+            //Sleep(50);
+
         }
         if (GetAsyncKeyState('N') & 0x8000)
         {
             //printPressedKey('N');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||   ||   ||   ||   ||###||   | \n";
             cout << " |   ||   ||   ||   ||   ||###||   | \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(466, 250);
-            clearPressedKey();
-            Sleep(50);
-            
+            //Sleep(50);
+
         }
         if (GetAsyncKeyState('M') & 0x8000)
         {
             //printPressedKey('M');
+            system("cls");
+            Sleep(50);
             cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
             cout << " |   ||   ||   ||   ||   ||   ||###| \n";
             cout << " |   ||   ||   ||   ||   ||   ||###| \n";
             cout << " |___||___||___||___||___||___||___|\n";
             cout << "  [Z]  [X]  [C]  [V]  [B]  [N]  [M] \n";
             Beep(494, 250);
-            clearPressedKey();
-            Sleep(50);
-            
+            //Sleep(50);
+
         }
-       
+
     }
-    
+
     return 0;
 }
-
-
-
-
