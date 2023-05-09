@@ -82,7 +82,7 @@ int main()
             cout << "Press [Esc] to exit\n";
             cout << "Press [Delete] to clear\n";
             cout << "Press [Space] to pause\n";
-            cout << "Press [TAB] to menu\n";
+            //cout << "Press [TAB] to menu\n";
             system("pause");
         }
 
@@ -199,7 +199,7 @@ int main()
         
        
     }
-    ;
+    
     
 
     return 0;
