@@ -4,3 +4,5 @@
 
 
 void printPianoKeys();
+
+void printMenu();

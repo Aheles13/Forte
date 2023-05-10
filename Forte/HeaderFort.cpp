@@ -2,6 +2,7 @@
 #include "HeaderFort.h"
 
 void printPianoKeys() {
+
 	std::cout << "Press the following keys to play the notes:\n";
 	std::cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
 	std::cout << " |   ||   ||   ||   ||   ||   ||   | \n";
@@ -13,5 +14,14 @@ void printPianoKeys() {
 	std::cout << "Press [Esc] to exit\n";
 	std::cout << "Press [Delete] to clear\n";
 	std::cout << "Press [Space] to pause\n";
-	std::cout << "Press [TAB] to menu\n";
+}
+
+void printMenu()  // Μενώ
+{
+
+
+	std::cout << "Press [Esc] to exit\n";
+	std::cout << "Press [Delete] to clear\n";
+	std::cout << "Press [Space] to pause\n";
+
 }
