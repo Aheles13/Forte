@@ -1,12 +1,13 @@
 ﻿#include <iostream>
 #include <cstdlib>
 #include <Windows.h>
+#include "HeaderFort.h"
 
 using namespace std;
 
 
 // Изображение клавиш.
-void printPianoKeys()
+/*void printPianoKeys()
 {
     cout << "Press the following keys to play the notes:\n";
     cout << "  ___  ___  ___  ___  ___  ___  ___  \n";
@@ -21,7 +22,7 @@ void printPianoKeys()
     cout << "Press [Space] to pause\n";
     cout << "Press [TAB] to menu\n";
 
-}
+}*/
 void printMenu()
 {
     
